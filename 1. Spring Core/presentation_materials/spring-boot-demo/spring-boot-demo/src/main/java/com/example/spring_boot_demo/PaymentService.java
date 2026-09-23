@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PaymentService
 {
-    private UserService userService;
+    private final UserService userService;
 
     @Autowired
     public PaymentService(UserService userService)
@@ -16,6 +16,8 @@ public class PaymentService
 
     public void pay()
     {
-        System.out.println("I am paying");
+        System.out.println("PaymentService: Processing payment...");
+        userService.showUser();
+        System.out.println("PaymentService: Payment successful!");
     }
 }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class OrderService
 {
-    private PaymentService paymentService;
+    private final PaymentService paymentService;
 
     @Autowired
     public OrderService(PaymentService paymentService)
@@ -16,6 +16,8 @@ public class OrderService
 
     public void sendOrder()
     {
-        System.out.println("Sending order to");
+        System.out.println("OrderService: Sending order...");
+        paymentService.pay();
+        System.out.println("OrderService: Order sent!");
     }
 }

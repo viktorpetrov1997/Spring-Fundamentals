@@ -11,8 +11,8 @@ public class SpringBootDemoApplication
 	{
 		ApplicationContext applicationContext = SpringApplication.run(SpringBootDemoApplication.class, args);
 
-		UserService userService = applicationContext.getBean(UserService.class);
+		OrderService orderService = applicationContext.getBean(OrderService.class);
 
-		System.out.println(userService);
+		orderService.sendOrder();
 	}
 }
