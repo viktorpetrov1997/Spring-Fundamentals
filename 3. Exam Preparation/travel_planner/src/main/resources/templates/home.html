@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head('Travel Planner')}"></head>
+
+<body>
+
+<header th:replace="~{fragments/navbar :: navbar-auth}"></header>
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1>
+            Explore The World
+        </h1>
+
+        <p>
+            Create trips, join adventures,
+            and discover incredible destinations.
+        </p>
+
+
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="container">
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-map-location-dot"></i>
+
+            <h3>Create Trips</h3>
+
+            <p>
+                Organize your next dream vacation.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-plane"></i>
+
+            <h3>Join Adventures</h3>
+
+            <p>
+                Travel together with other explorers.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-camera"></i>
+
+            <h3>Discover Attractions</h3>
+
+            <p>
+                Save unforgettable memories.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+</body>
+
+</html>

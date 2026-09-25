@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<!-- Navbar for unauthenticated/guest users -->
+<nav th:fragment="navbar-guest">
+
+    <div class="container nav-container">
+
+        <a th:href="@{/}"
+           class="logo">
+
+            ✈ Travel Planner
+
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a th:href="@{/}">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/trips}">
+                    Trips
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/login}">
+                    Login
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/register}">
+                    Register
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+<!-- Navbar for authenticated users -->
+<nav th:fragment="navbar-auth">
+
+    <div class="container nav-container">
+
+        <a th:href="@{/}"
+           class="logo">
+
+            ✈ Travel Planner
+
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a th:href="@{/}">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/trips}">
+                    Trips
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/trips/create}">
+                    Create Trip
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/my-trips}">
+                    My Trips
+                </a>
+            </li>
+
+            <li>
+                <form th:action="@{/logout}"
+                      method="POST"
+                      style="display:inline;">
+                    <button type="submit"
+                            class="btn-logout">
+                        Logout
+                    </button>
+                </form>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+</body>
+
+</html>

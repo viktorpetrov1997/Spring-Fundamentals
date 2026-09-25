@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head('Trips')}"></head>
+
+<body>
+
+<header th:replace="~{fragments/navbar :: navbar-guest}"></header>
+
+<section class="page-section">
+
+    <div class="container">
+
+        <h1>Available Trips</h1>
+
+        <div class="trip-grid">
+
+            <div class="trip-card"
+                 th:each="trip : ${trips}">
+
+                <img th:src="${trip.coverImageUrl}"
+                     alt="Trip">
+
+                <h3 th:text="${trip.destination}">
+                </h3>
+
+                <p th:text="${trip.description}">
+                </p>
+
+                <a class="btn-primary"
+                   th:href="@{/trips/{id}(id=${trip.id})}">
+
+                    Details
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+</body>
+
+</html>

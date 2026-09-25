@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<footer th:fragment="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>Travel Planner</h3>
+
+                <p>
+                    Create unforgettable journeys and
+                    discover amazing destinations around
+                    the world.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Navigation</h3>
+
+                <ul>
+
+                    <li>
+                        <a th:href="@{/}">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a th:href="@{/trips}">
+                            Trips
+                        </a>
+                    </li>
+
+                    <li>
+                        <a th:href="@{/my-trips}">
+                            My Trips
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h3>Contact</h3>
+
+                <p>Email: info@travelplanner.com</p>
+
+                <p>Phone: +359 888 123 456</p>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <p class="copyright">
+
+            © 2026 Travel Planner.
+            All rights reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>

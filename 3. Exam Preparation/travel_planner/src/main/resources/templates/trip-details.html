@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head('Trip Details')}"></head>
+
+<body>
+
+<header th:replace="~{fragments/navbar :: navbar-auth}"></header>
+
+<section class="trip-hero">
+
+    <div class="container">
+
+        <h1 th:text="${trip.destination}">
+            Paris, France
+        </h1>
+
+        <p class="trip-date">
+
+            <i class="fa-solid fa-calendar"></i>
+
+            <span th:text="${trip.startDate}"></span>
+            -
+            <span th:text="${trip.endDate}"></span>
+
+        </p>
+
+    </div>
+
+</section>
+
+<section class="page-section">
+
+    <div class="container">
+
+        <div class="trip-details-card">
+
+            <h2>About This Trip</h2>
+
+            <p th:text="${trip.description}">
+                Description
+            </p>
+
+            <hr>
+
+            <p>
+
+                <strong>Created By:</strong>
+
+                <span th:text="${trip.creator.username}">
+                    Creator
+                </span>
+
+            </p>
+
+            <div class="action-buttons">
+
+                <a class="btn-primary"
+                   th:href="@{/trips/{id}/join(id=${trip.id})}">
+
+                    Join Trip
+
+                </a>
+
+                <a class="btn-secondary"
+                   th:href="@{/trips/{id}/edit(id=${trip.id})}">
+
+                    Edit
+
+                </a>
+
+                <form th:action="@{/trips/{id}/delete(id=${trip.id})}"
+                      method="post">
+
+                    <button class="btn-danger">
+
+                        Delete
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="page-section">
+
+    <div class="container">
+
+        <h2>Attractions</h2>
+
+        <div class="trip-grid">
+
+            <div class="trip-card"
+                 th:each="attraction : ${trip.attractions}">
+
+                <img th:src="${attraction.imageUrl}"
+                     alt="Attraction">
+
+                <h3 th:text="${attraction.title}">
+                </h3>
+
+                <p th:text="${attraction.description}">
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+</body>
+
+</html>
